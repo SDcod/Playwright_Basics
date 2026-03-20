@@ -5,14 +5,20 @@
   "main": "index.js",
   "scripts": {
     "all-tests-examples-allure": "npx playwright test --reporter=allure-playwright",
-    "generate-allure-reports": "allure generate ./allure-results -o ./allure-report"
+    "generate-allure-reports": "allure generate ./allure-results -o ./allure-report",
+    "test:ui:qa": "cross-env ENV=qa playwright test --ui",
+    "test:ui:staging": "cross-env ENV=staging playwright test --ui"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.51.0",
+    "@playwright/test": "^1.58.2",
     "@types/node": "^22.13.10",
     "allure-playwright": "^3.3.2"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.3.1"
   }
 }

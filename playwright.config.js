@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig, devices } from "@playwright/test";
-
+require("dotenv").config({
+  path: `.env.${process.env.ENV || "qa"}`,
+});
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
